@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: mystic-stocks
+    runtime: node
+    plan: free
+    branch: main
+    buildCommand: pnpm install && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BIGMODEL_API_KEY
+        sync: false
+      - key: BIGMODEL_BASE_URL
+        value: https://open.bigmodel.cn/api/coding/paas/v4
+      - key: BIGMODEL_MODEL
+        value: glm-4.7
