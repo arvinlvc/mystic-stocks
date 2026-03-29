@@ -1,81 +1,137 @@
-# 玄学荐股
+<div align="center">
 
-基于原型页面落地的移动优先网页版应用，当前使用 `Next.js + TypeScript + Tailwind CSS + pnpm`，并已接入 BigModel `coding` 端生成结构化荐股结果。
+# 🔮 玄学荐股 · Mystic Stocks
 
-## 当前状态
+**当五行八卦遇上 A 股市场，用玄学的力量为你指引投资方向**
 
-- 已完成基础工程脚手架
-- 已接入 4 个核心页面
-- 已抽离共享布局、底部导航、图表组件和真实状态存储
-- 已接入 BigModel 荐股 API
-- 已支持本地历史记录与帐籍保存
-- 已实现“立即摇卦 -> 六爻生成 -> 自动 AI 推演”完整流程
-- 已通过一次生产构建校验
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## 页面对应关系
+</div>
 
-- `/`
-  乾坤首页，对应 `stitch/_3/code.html`
-- `/market`
-  个股市道页，对应 `stitch/_1/code.html`
-- `/divination`
-  卜卦页，对应 `stitch/_2/code.html`
-- `/ledger`
-  帐籍页，对应 `stitch/_4/code.html`
+---
 
-## 运行方式
+## ✨ 项目简介
+
+玄学荐股是一款将中国传统易学文化（五行、六爻、八卦）与 A 股市场数据相结合的创新 Web 应用。用户通过"摇卦"仪式，借助 AI 大模型推演生成个性化的股票推荐结果——**纯属娱乐，不构成投资建议**。
+
+## 📸 应用截图
+
+<div align="center">
+
+| 乾坤首页 | 个股市道 |
+|:---:|:---:|
+| <img src="image/image1.png" width="300" alt="乾坤首页"/> | <img src="image/image4.png" width="300" alt="个股市道"/> |
+
+| 卜卦仪式 | AI 推演结果 |
+|:---:|:---:|
+| <img src="image/image2.png" width="300" alt="卜卦仪式"/> | <img src="image/image3.png" width="300" alt="AI推演结果"/> |
+
+| 荐股工作台 | 帐籍记录 |
+|:---:|:---:|
+| <img src="image/image5.png" width="300" alt="荐股工作台"/> | <img src="image/image6.png" width="300" alt="帐籍记录"/> |
+
+</div>
+
+## 🎯 核心功能
+
+- 🀄 **六爻摇卦** — 真实的六爻生成算法，推演本卦、互卦、变卦
+- 🤖 **AI 推演荐股** — 接入智谱 BigModel，基于卦象自动生成结构化荐股结论
+- 📈 **五行可视化** — 金木水火土五维雷达图、K 线气运图、阴阳饼图
+- 💹 **个股市道** — 实时行情数据展示，涨跌与五行属性联动
+- 📒 **帐籍管理** — 本地保存推荐记录，支持加入/移除自选
+- 📱 **移动优先** — 针对手机端深度优化，丝滑触控体验
+
+## 🛠 技术栈
+
+| 类别 | 技术 |
+|------|------|
+| 框架 | Next.js 16 (App Router) |
+| 语言 | TypeScript 5.9 |
+| UI | React 19 + Tailwind CSS 3 |
+| AI | 智谱 BigModel GLM-4 |
+| 包管理 | pnpm 10 |
+| 部署 | Node.js 生产构建 |
+
+## 🚀 快速开始
+
+### 环境要求
+
+- Node.js >= 18
+- pnpm >= 8
+
+### 安装与运行
 
 ```bash
+# 克隆项目
+git clone https://github.com/arvinlvc/mystic-stocks.git
+cd mystic-stocks
+
+# 安装依赖
 pnpm install
+
+# 配置环境变量
+cp .env.example .env.local
+# 编辑 .env.local 填入你的 BigModel API Key
+
+# 启动开发服务器
 pnpm dev
 ```
 
-生产构建：
+### 生产构建
 
 ```bash
 pnpm build
 pnpm start
 ```
 
-## 大模型配置
+## ⚙️ 环境变量
 
-本地开发使用：
+| 变量 | 说明 | 示例 |
+|------|------|------|
+| `BIGMODEL_API_KEY` | 智谱 BigModel API 密钥 | `your_api_key_here` |
+| `BIGMODEL_BASE_URL` | API 地址 | `https://open.bigmodel.cn/api/coding/paas/v4` |
+| `BIGMODEL_MODEL` | 模型名称 | `glm-4.7` |
 
-```bash
-BIGMODEL_API_KEY=...
-BIGMODEL_BASE_URL=https://open.bigmodel.cn/api/coding/paas/v4
-BIGMODEL_MODEL=glm-4.7
+## 📡 API 接口
+
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| `POST` | `/api/recommend` | 调用 BigModel 返回结构化荐股结果 |
+| `GET` | `/api/state` | 获取本地历史记录与帐籍 |
+| `POST` | `/api/watchlist` | 将推荐标的加入帐籍 |
+| `DELETE` | `/api/watchlist` | 从帐籍移除标的 |
+
+## 📁 项目结构
+
+```
+├── app/                    # Next.js App Router
+│   ├── api/                # API 路由 (recommend, state, watchlist)
+│   ├── divination/         # 卜卦页
+│   ├── ledger/             # 帐籍页
+│   ├── market/             # 市道页
+│   └── page.tsx            # 乾坤首页
+├── components/             # 组件库
+│   ├── charts/             # 五行图表组件
+│   ├── divination/         # 卜卦相关组件
+│   ├── layout/             # 布局与导航
+│   └── watchlist/          # 帐籍操作组件
+├── lib/                    # 核心逻辑
+│   ├── bigmodel.ts         # BigModel API 调用
+│   ├── divination-*.ts     # 六爻算法与卦象推演
+│   ├── live-*.ts           # 实时行情数据
+│   └── recommendation-*.ts # 荐股类型与默认值
+├── image/                  # 应用截图
+└── stitch/                 # 设计原型与文档
 ```
 
-接口：
+## ⚠️ 免责声明
 
-- `POST /api/recommend`
-  调用 BigModel 返回结构化荐股结果
-- `GET /api/state`
-  返回本地历史记录与帐籍
-- `POST /api/watchlist`
-  把推荐标的加入帐籍
-- `DELETE /api/watchlist`
-  从帐籍移除标的
+本项目仅供学习交流与娱乐用途，**不构成任何投资建议**。股市有风险，投资需谨慎。玄学荐股结果由 AI 模型基于卦象生成，不具有任何实际预测能力。
 
-## 目录说明
+## 📄 License
 
-- `app/`
-  Next App Router 页面、全局样式和 API 路由
-- `components/`
-  布局、图表、卦象和荐股工作台组件
-- `lib/`
-  类型、环境变量、BigModel 调用逻辑和本地状态存储
-- `stitch/`
-  原始设计文档、HTML 原型和截图
-- `docs/development-prep.md`
-  开发准备与当前实现说明
-
-## 说明
-
-- 卜卦页支持真实调用 BigModel Coding 端点生成荐股结论
-- “立即摇卦”会真实生成六爻、推导卦象、自动填充参数并触发一次 AI 推演
-- 首页、市道页、帐籍页都基于本地真实生成的数据联动展示
-- 本地状态保存在 `.data/app-state.json`
-- 为了保证离线和受限网络环境可构建，字体改为本地优先字体栈
-- 生产构建脚本使用 `webpack`，规避当前环境下 `Turbopack` 的构建限制
+[MIT](LICENSE)
