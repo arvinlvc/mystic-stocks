@@ -1,0 +1,8 @@
+.next
+node_modules
+.pnpm-store
+.env.local
+.DS_Store
+.data
+.playwright-cli
+playwright-cli.json

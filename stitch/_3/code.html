@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>乾坤金策 - The Celestial Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;family=Manrope:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#e9c349",
+              "outline-variant": "#4d4635",
+              "on-secondary-fixed": "#002111",
+              "surface-variant": "#303541",
+              "surface-container-low": "#171b27",
+              "on-error-container": "#ffdad6",
+              "background": "#0e131e",
+              "outline": "#99907c",
+              "surface-tint": "#e9c349",
+              "surface-container-highest": "#303541",
+              "secondary-fixed-dim": "#59de9b",
+              "on-surface-variant": "#d0c5af",
+              "on-background": "#dee2f2",
+              "inverse-primary": "#735c00",
+              "surface-dim": "#0e131e",
+              "surface": "#0e131e",
+              "on-tertiary-fixed": "#400200",
+              "on-primary-fixed-variant": "#574500",
+              "tertiary-container": "#ff9785",
+              "surface-bright": "#343946",
+              "secondary": "#59de9b",
+              "on-secondary-fixed-variant": "#005232",
+              "surface-container-lowest": "#090e19",
+              "on-secondary": "#003921",
+              "on-error": "#690005",
+              "tertiary": "#ffc0b5",
+              "tertiary-fixed-dim": "#ffb4a7",
+              "on-secondary-container": "#00311c",
+              "error": "#ffb4ab",
+              "surface-container-high": "#252a36",
+              "secondary-fixed": "#78fbb6",
+              "primary-fixed": "#ffe088",
+              "inverse-surface": "#dee2f2",
+              "tertiary-fixed": "#ffdad4",
+              "error-container": "#93000a",
+              "secondary-container": "#00a669",
+              "primary": "#f2ca50",
+              "on-primary-container": "#554300",
+              "on-tertiary-fixed-variant": "#920800",
+              "on-tertiary-container": "#8f0800",
+              "on-tertiary": "#670400",
+              "on-primary-fixed": "#241a00",
+              "surface-container": "#1b1f2b",
+              "primary-container": "#d4af37",
+              "on-primary": "#3c2f00",
+              "on-surface": "#dee2f2",
+              "inverse-on-surface": "#2b303c"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif SC", "serif"],
+              "body": ["Manrope", "sans-serif"],
+              "label": ["Space Grotesk", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #0e131e;
+    color: #dee2f2;
+    font-family: "Manrope", sans-serif;
+    background-image: radial-gradient(circle at 50% 50%, rgba(48, 53, 65, 0.2) 0%, transparent 80%)
+    }
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCm-ZZgP9RbGnHkcWwnEQ_ZIFu3Udn4_oLXsTKNW-u7NBISiQki9ZJlMrm2yDG7a32uYJZeowVVONcDyhx73Ckn7OJKnCIOe4LD_2uY4ecXDD5is7wRO6uNG8gmMD-Rc-C8SdOE5tHbnVp-65oOqb3IEU1SDWn6vFGMLcFLgtJCi3csqYac9u1cNKfOkUT4Gblh16smrL4t5qaReFmzIegBC7f-MvXD2l0-BGJkuV8zQrgQOSVdkTQQYkwON_xbBdjj67zpdkiOXVQ)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.bagua-bg {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><path d=\"M50 5 L55 15 L45 15 Z M50 95 L55 85 L45 85 Z\" fill=\"rgba(242, 202, 80, 0.05)\"/></svg>")
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e131e] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-surface-variant flex items-center justify-center p-[1px]">
+<div class="w-full h-full rounded-full bg-surface flex items-center justify-center overflow-hidden">
+<img alt="Celestial Golden Dragon Seal" class="w-8 h-8 object-contain" data-alt="A golden circular seal featuring a detailed imperial dragon silhouette with celestial patterns in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5CN2H4U4hZBGYykwqhEYbSOB_kBupklJj5lDwV658ZuJDygCzdEIPS20xjZF1sQtKt5COb4xseML6xTHUlkobzoDoWLzD4q3O1sqEUq6cPCsrlv1X4AEhNzSDsPv2kVV7YpbIlglnWV8WH7W0Q8-LHmqLXE4qjWsvngW5spD7V4Ox92CSLDsBWCKfpPzKFaZ7ShZ9K4xyFX-48Ip934Z7NiaY6XymgYl-_bvVjP0GcPNhMvRdkq3LQsdaUC8PB4Z5phFOs6iqwYI"/>
+</div>
+</div>
+<h1 class="font-['Noto_Serif'] font-bold tracking-widest text-2xl text-[#f2ca50] italic drop-shadow-[0_2px_2px_rgba(242,202,80,0.3)]">
+                乾坤金策
+            </h1>
+</div>
+<button class="text-[#f2ca50] transition-all active:opacity-80 active:scale-95">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</button>
+<div class="absolute bottom-0 left-0 bg-gradient-to-b from-[#303541] to-transparent h-1 w-full opacity-50"></div>
+</header>
+<main class="flex-grow pt-24 pb-32 px-5 space-y-8 max-w-lg mx-auto w-full">
+<!-- Celestial Clock Widget -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container-low p-6 shadow-2xl">
+<div class="absolute -right-12 -top-12 opacity-10">
+<span class="material-symbols-outlined text-[160px] text-primary">schedule</span>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center text-center">
+<p class="font-label text-primary-fixed-dim text-xs tracking-[0.2em] mb-2">CELESTIAL TIME</p>
+<h2 class="font-headline text-4xl text-primary mb-1">辰时</h2>
+<p class="font-body text-on-surface-variant text-sm">Chen Hour | 07:00 - 09:00</p>
+<div class="mt-6 flex gap-1 items-end h-12">
+<div class="w-1 bg-primary/20 h-4"></div>
+<div class="w-1 bg-primary/40 h-8"></div>
+<div class="w-1 bg-primary h-12"></div>
+<div class="w-1 bg-primary/40 h-6"></div>
+<div class="w-1 bg-primary/20 h-3"></div>
+<div class="w-1 bg-primary/10 h-2"></div>
+</div>
+<p class="mt-4 font-label text-[10px] text-outline uppercase tracking-tighter">Market Qi Peaks in 42 Cycles</p>
+</div>
+</section>
+<!-- Market Qi Gauge -->
+<section class="grid grid-cols-1 gap-6">
+<div class="bg-surface-container rounded-xl p-6 relative border-l-2 border-secondary/30">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline text-lg text-on-surface">全市场气数</h3>
+<p class="font-label text-[10px] text-secondary">MARKET QI INDEX</p>
+</div>
+<div class="text-secondary text-4xl font-label font-bold">72</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-secondary-container to-secondary h-full w-[72%] shadow-[0_0_12px_rgba(89,222,155,0.4)]"></div>
+</div>
+<div class="mt-3 flex justify-between text-[10px] font-label text-outline uppercase">
+<span>Void (0)</span>
+<span>Harmonious</span>
+<span>Zenith (100)</span>
+</div>
+</div>
+</section>
+<!-- Five Element Energy Distribution -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-primary text-xl">blur_on</span>
+<h3 class="font-headline text-md text-on-surface">五行能量分布</h3>
+</div>
+<div class="grid grid-cols-5 gap-3 items-end h-40 px-2">
+<!-- Wood -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full bg-secondary/20 rounded-t-lg group-hover:bg-secondary/40 transition-all h-[45%] relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 font-label text-[10px] text-secondary">45%</div>
+</div>
+<span class="font-headline text-xs text-secondary">木</span>
+</div>
+<!-- Fire -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full bg-tertiary-container/20 rounded-t-lg group-hover:bg-tertiary-container/40 transition-all h-[82%] relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 font-label text-[10px] text-tertiary-container text-red-400">82%</div>
+</div>
+<span class="font-headline text-xs text-red-400">火</span>
+</div>
+<!-- Earth -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/40 rounded-t-lg group-hover:bg-primary/60 transition-all h-[60%] relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 font-label text-[10px] text-primary">60%</div>
+</div>
+<span class="font-headline text-xs text-primary">土</span>
+</div>
+<!-- Metal -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-col bg-on-surface-variant/20 rounded-t-lg group-hover:bg-on-surface-variant/40 transition-all h-[30%] relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 font-label text-[10px] text-outline">30%</div>
+</div>
+<span class="font-headline text-xs text-outline">金</span>
+</div>
+<!-- Water -->
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-full bg-blue-400/20 rounded-t-lg group-hover:bg-blue-400/40 transition-all h-[55%] relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 font-label text-[10px] text-blue-300">55%</div>
+</div>
+<span class="font-headline text-xs text-blue-300">水</span>
+</div>
+</div>
+</section>
+<!-- Daily Fortune Forecast Card -->
+<section class="relative group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="bg-surface-container-high rounded-xl p-6 shadow-lg bagua-bg">
+<div class="flex items-start justify-between mb-6">
+<div class="space-y-1">
+<h3 class="font-headline text-xl text-primary">今日财运</h3>
+<p class="font-body text-xs text-on-surface-variant">Daily Prosperity Projection</p>
+</div>
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<div class="flex gap-4 items-center mb-6">
+<div class="flex flex-col gap-1.5">
+<div class="w-10 h-1 bg-primary"></div>
+<div class="w-10 h-1 bg-primary"></div>
+<div class="w-10 h-1 bg-surface-container-highest"></div>
+<div class="w-10 h-1 bg-primary"></div>
+<div class="w-10 h-1 bg-surface-container-highest"></div>
+<div class="w-10 h-1 bg-primary"></div>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-lg text-on-surface">火天大有 (Hexagram 14)</h4>
+<p class="font-body text-sm text-secondary">Great Possession: Abundance in Metal Sectors.</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest/50 rounded-lg border border-outline-variant/20 italic text-sm text-on-surface-variant leading-relaxed">
+                    "The sun shines high in the heaven. Seek gold in the East; maintain stillness in the South. Your celestial alignment favors aggressive accumulation."
+                </div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-[#0e131e]/90 backdrop-blur-xl flex justify-around items-center h-20 px-4 pb-safe border-t border-[#f2ca50]/10 shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#f2ca50] bg-[#303541]/40 rounded-xl px-3 py-1 shadow-[inset_0_1px_1px_rgba(242,202,80,0.2)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Space_Grotesk'] uppercase text-[10px] tracking-tighter mt-1">乾坤</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 hover:text-[#59de9b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-['Space_Grotesk'] uppercase text-[10px] tracking-tighter mt-1">市道</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 hover:text-[#59de9b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Space_Grotesk'] uppercase text-[10px] tracking-tighter mt-1">卜卦</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 hover:text-[#59de9b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-['Space_Grotesk'] uppercase text-[10px] tracking-tighter mt-1">帐籍</span>
+</a>
+</nav>
+</body></html>

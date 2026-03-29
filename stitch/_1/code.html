@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>乾坤金策 - 宁德时代 300750</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&amp;family=Manrope:wght@400;600&amp;family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+body {
+    font-family: "Manrope", sans-serif;
+    background-color: #0e131e;
+    background-image: radial-gradient(circle at 50% -20%, #1b1f2b 0%, #0e131e 70%);
+    color: #dee2f2
+    }
+.serif {
+    font-family: "Noto Serif SC", serif
+    }
+.label {
+    font-family: "Space Grotesk", sans-serif
+    }
+/* Digital Parchment Texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBEI2J5Xl0oxGrp5FDHmNaX-WTbwnowXD9z7HoaYB2D9rcy-K25m368uRIrzxuqWqhWRFSv-xet_lF_m4VBmptOukB_grRGChP73QTmTvyin9lE0fByg9DZo4GvlNso1w7ZmerYht_lyY2x-0YCYFR8RfF0wVT6MFGwzPIFVx7Ms6ELO-oNNbV54JGI1ilsb6_oe5Rw9B3Q4fdktfBmCnIBzvmnZsyIgCJPJGfOMZ3PuJMsnpNqBwX3oSRYy3vBlJsoCTCRI9TMIE4);
+    z-index: 9999
+    }
+.glass-card {
+    background: rgba(48, 53, 65, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(242, 202, 80, 0.1)
+    }
+.qi-gradient {
+    background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%)
+    }
+.hexagram-line {
+    height: 8px;
+    width: 100%;
+    border-radius: 2px;
+    margin-bottom: 6px
+    }
+.line-yang {
+    background-color: #f2ca50
+    }
+.line-yin {
+    background: linear-gradient(90deg, #f2ca50 0%, #f2ca50 42%, transparent 42%, transparent 58%, #f2ca50 58%, #f2ca50 100%)
+    }</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-tertiary-container": "#8f0800",
+                "surface-tint": "#e9c349",
+                "primary": "#f2ca50",
+                "tertiary": "#ffc0b5",
+                "surface-container-low": "#171b27",
+                "tertiary-container": "#ff9785",
+                "surface": "#0e131e",
+                "secondary": "#59de9b",
+                "on-error-container": "#ffdad6",
+                "on-secondary-fixed": "#002111",
+                "surface-container-highest": "#303541",
+                "on-tertiary": "#670400",
+                "error": "#ffb4ab",
+                "outline": "#99907c",
+                "primary-fixed-dim": "#e9c349",
+                "error-container": "#93000a",
+                "on-tertiary-fixed-variant": "#920800",
+                "on-primary": "#3c2f00",
+                "on-primary-container": "#554300",
+                "surface-container-lowest": "#090e19",
+                "on-secondary-fixed-variant": "#005232",
+                "on-primary-fixed-variant": "#574500",
+                "surface-dim": "#0e131e",
+                "on-secondary-container": "#00311c",
+                "inverse-on-surface": "#2b303c",
+                "tertiary-fixed": "#ffdad4",
+                "inverse-surface": "#dee2f2",
+                "on-primary-fixed": "#241a00",
+                "surface-container-high": "#252a36",
+                "primary-container": "#d4af37",
+                "surface-variant": "#303541",
+                "on-surface": "#dee2f2",
+                "primary-fixed": "#ffe088",
+                "on-surface-variant": "#d0c5af",
+                "tertiary-fixed-dim": "#ffb4a7",
+                "secondary-container": "#00a669",
+                "outline-variant": "#4d4635",
+                "on-background": "#dee2f2",
+                "background": "#0e131e",
+                "on-tertiary-fixed": "#400200",
+                "on-error": "#690005",
+                "surface-bright": "#343946",
+                "secondary-fixed-dim": "#59de9b",
+                "secondary-fixed": "#78fbb6",
+                "surface-container": "#1b1f2b",
+                "inverse-primary": "#735c00",
+                "on-secondary": "#003921"
+              },
+              fontFamily: {
+                "headline": ["Noto Serif SC"],
+                "body": ["Manrope"],
+                "label": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="pb-32">
+<!-- Top Bar Component -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center px-4 h-16 bg-[#0e131e] shadow-[0_4px_20px_rgba(242,202,80,0.06)]">
+<div class="flex items-center w-full justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#f2ca50] cursor-pointer active:scale-95 transition-transform" data-icon="arrow_back">arrow_back</span>
+<div class="flex flex-col">
+<h1 class="font-['Noto_Serif_SC'] font-bold text-xl tracking-tight text-[#f2ca50]">宁德时代 300750</h1>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#f2ca50] hover:text-[#59de9b] transition-colors" data-icon="notifications">notifications</span>
+</div>
+<div class="absolute bottom-0 left-0 bg-gradient-to-b from-[#303541] to-transparent h-px w-full"></div>
+</header>
+<main class="mt-20 px-4 space-y-6">
+<!-- Qi/Price Summary Section -->
+<section class="flex justify-between items-end">
+<div class="space-y-1">
+<div class="label text-on-surface-variant text-xs tracking-widest uppercase">实时市价</div>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-bold text-secondary">192.45</span>
+<span class="text-secondary label text-sm">+3.12%</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span>甲辰年 丁卯月 壬申日</span>
+</div>
+</div>
+<div class="relative flex flex-col items-center">
+<div class="w-20 h-20 rounded-full border-2 border-primary/20 flex items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5 animate-pulse"></div>
+<div class="text-center z-10">
+<div class="label text-[10px] text-primary-fixed-dim">气数</div>
+<div class="serif text-2xl font-black text-primary">88</div>
+</div>
+<!-- Decorative Orbits -->
+<div class="absolute w-full h-full border border-primary/10 rounded-full scale-110 animate-[spin_10s_linear_infinite]"></div>
+</div>
+</div>
+</section>
+<!-- Qi-Chart (气运K线) -->
+<section class="glass-card rounded-xl p-4 overflow-hidden relative">
+<div class="flex justify-between items-center mb-4">
+<h3 class="serif text-sm font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+                    气运K线
+                </h3>
+<div class="flex gap-3 text-[10px] label text-on-surface-variant">
+<span class="text-primary">分时</span>
+<span>日K</span>
+<span>周K</span>
+</div>
+</div>
+<div class="h-48 w-full flex items-end justify-between gap-1 relative">
+<!-- Mock Candle Charts -->
+<div class="w-full h-32 flex items-end gap-[2px]">
+<div class="flex-1 bg-secondary/40 rounded-t-sm h-1/2"></div>
+<div class="flex-1 bg-secondary/60 rounded-t-sm h-2/3"></div>
+<div class="flex-1 bg-secondary/80 rounded-t-sm h-3/4 relative">
+<span class="material-symbols-outlined absolute -top-5 left-1/2 -translate-x-1/2 text-primary text-xs" data-icon="flare">flare</span>
+</div>
+<div class="flex-1 bg-tertiary-container/60 rounded-t-sm h-1/2"></div>
+<div class="flex-1 bg-secondary/50 rounded-t-sm h-3/5"></div>
+<div class="flex-1 bg-secondary/90 rounded-t-sm h-full relative">
+<span class="material-symbols-outlined absolute -top-5 left-1/2 -translate-x-1/2 text-secondary text-xs" data-icon="brightness_low">brightness_low</span>
+</div>
+<div class="flex-1 bg-secondary/70 rounded-t-sm h-4/5"></div>
+<div class="flex-1 bg-secondary/40 rounded-t-sm h-2/3"></div>
+</div>
+<!-- Connecting Qi Line -->
+<svg class="absolute inset-0 w-full h-full opacity-30 pointer-events-none" viewbox="0 0 400 200">
+<path d="M0,150 Q100,120 200,80 T400,50" fill="none" stroke="#f2ca50" stroke-dasharray="4 2" stroke-width="1"></path>
+</svg>
+</div>
+</section>
+<!-- Hexagram Analysis & Wu Xing Grid -->
+<div class="grid grid-cols-5 gap-4">
+<!-- Hexagram (3/5 width) -->
+<div class="col-span-3 glass-card rounded-xl p-4">
+<h3 class="serif text-sm font-bold text-primary mb-4">六爻断卦：火风鼎</h3>
+<div class="flex gap-4">
+<div class="flex flex-col-reverse justify-between w-12 py-1">
+<div class="hexagram-line line-yang"></div>
+<div class="hexagram-line line-yin"></div>
+<div class="hexagram-line line-yang"></div>
+<div class="hexagram-line line-yang"></div>
+<div class="hexagram-line line-yang"></div>
+<div class="hexagram-line line-yin"></div>
+</div>
+<div class="flex-1 space-y-3">
+<div class="group">
+<div class="serif text-[10px] text-primary">五爻：飞龙在天</div>
+<p class="text-[9px] text-on-surface-variant leading-tight">核心技术突破，市占率稳居鳌头。</p>
+</div>
+<div class="group opacity-60">
+<div class="serif text-[10px] text-on-surface">初爻：潜龙勿用</div>
+<p class="text-[9px] text-on-surface-variant leading-tight">利空出尽，基石渐稳，蓄势待发。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Wu Xing (2/5 width) -->
+<div class="col-span-2 glass-card rounded-xl p-4 flex flex-col items-center justify-between">
+<h3 class="serif text-[10px] font-bold text-primary text-center">五行合化</h3>
+<div class="relative w-16 h-16 flex items-center justify-center">
+<div class="absolute inset-0 rounded-full border border-dashed border-outline-variant/30 animate-[spin_20s_linear_infinite]"></div>
+<div class="serif text-xs text-secondary">木旺</div>
+</div>
+<div class="w-full space-y-1">
+<div class="flex justify-between text-[8px] label">
+<span>金</span>
+<div class="w-12 h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary h-full w-2/3"></div>
+</div>
+</div>
+<div class="flex justify-between text-[8px] label">
+<span>木</span>
+<div class="w-12 h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="flex justify-between text-[8px] label">
+<span>水</span>
+<div class="w-12 h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-blue-400 h-full w-1/3"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- The Oracle's Verdict -->
+<section class="relative">
+<div class="absolute -top-4 -right-2 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="filter_vintage">filter_vintage</span>
+</div>
+<div class="glass-card rounded-xl p-6 border-primary/20 bg-gradient-to-br from-[#1b1f2b] to-[#0e131e]">
+<div class="serif text-primary-fixed-dim text-xs mb-2 tracking-widest uppercase">天机判词</div>
+<blockquote class="serif text-2xl font-bold text-on-surface mb-4 leading-relaxed italic">
+                    “金水相生，后劲绵长。乘龙之势，四海归心。”
+                </blockquote>
+<p class="text-on-surface-variant text-xs mb-6 leading-relaxed">
+                    当前时值甲辰龙年，宁德时代五行属金，受流年木气激荡，虽有波折但根基弥坚。三月内必有重大资金回流。
+                </p>
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold serif text-lg shadow-[0_8px_25px_rgba(212,175,55,0.3)] active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+                    顺天而行 · 立即建仓
+                </button>
+</div>
+</section>
+<!-- Insights Bento -->
+<section class="grid grid-cols-2 gap-4">
+<div class="surface-container-low rounded-xl p-4 flex flex-col gap-2">
+<div class="label text-[10px] text-on-surface-variant">龙脉动向</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="serif text-sm">主力净流入</span>
+</div>
+</div>
+<div class="surface-container-low rounded-xl p-4 flex flex-col gap-2">
+<div class="label text-[10px] text-on-surface-variant">玄武预警</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary-container"></div>
+<span class="serif text-sm">均线死叉风险</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2 bg-[#0e131e]/90 backdrop-blur-xl shadow-[0_-8px_30px_rgba(0,0,0,0.5)] rounded-t-xl">
+<div class="absolute top-0 left-0 bg-gradient-to-t from-[#303541] to-transparent h-px w-full"></div>
+<a class="flex flex-col items-center justify-center text-[#303541] opacity-70 hover:opacity-100 hover:text-[#59de9b]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest">乾坤</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#f2ca50] bg-[#303541]/40 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="trending_up">trending_up</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest">市道</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#303541] opacity-70 hover:opacity-100 hover:text-[#59de9b]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest">卜卦</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#303541] opacity-70 hover:opacity-100 hover:text-[#59de9b]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest">帐籍</span>
+</a>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-[0.03] pointer-events-none">
+<img alt="background motif" class="w-full h-full object-cover" data-alt="subtle and faint intricate chinese celestial star chart with bagua symbols on dark navy background minimalist editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPSm4qadWMuQpXst1Dl35nKxGjz8BKHvWSka5E2A5_5vYDGjfSUEEWkydUy8J4TUHSXakEUld6HB2CLQH00nKwTYuJpJhZMAiD4kW7VZJcYDuqCnwadXAjyCYCtMQQOoZMoMnIYH-mbddY0M0tZsEgGvWUCuMFcjHiFuUs_8m1TwPj_B1gDB0rTcKsYFYNX-ckPwNQ2rTq5Crq-X7wlAPOK57gvnbA4kgJQYHZOvnYojB88NLdjbhVIzZ5W869DiAaVYNUpz65SY"/>
+</div>
+</body></html>

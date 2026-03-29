@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manual Divination | 金曜神占</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&amp;family=Manrope:wght@400;500;700&amp;family=Space_Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#59de9b",
+                        "secondary-fixed-dim": "#59de9b",
+                        "on-secondary": "#003921",
+                        "primary-container": "#d4af37",
+                        "on-primary-container": "#554300",
+                        "outline-variant": "#4d4635",
+                        "on-secondary-container": "#00311c",
+                        "background": "#0e131e",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-highest": "#303541",
+                        "on-surface": "#dee2f2",
+                        "surface-container": "#1b1f2b",
+                        "primary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#735c00",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#ff9785",
+                        "surface-tint": "#e9c349",
+                        "surface-bright": "#343946",
+                        "surface-container-high": "#252a36",
+                        "surface": "#0e131e",
+                        "tertiary-fixed-dim": "#ffb4a7",
+                        "surface-container-low": "#171b27",
+                        "on-background": "#dee2f2",
+                        "error": "#ffb4ab",
+                        "on-primary": "#3c2f00",
+                        "tertiary-fixed": "#ffdad4",
+                        "outline": "#99907c",
+                        "on-secondary-fixed-variant": "#005232",
+                        "tertiary": "#ffc0b5",
+                        "surface-dim": "#0e131e",
+                        "on-surface-variant": "#d0c5af",
+                        "inverse-surface": "#dee2f2",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary-container": "#8f0800",
+                        "on-tertiary": "#670400",
+                        "on-tertiary-fixed-variant": "#920800",
+                        "on-secondary-fixed": "#002111",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#090e19",
+                        "secondary-container": "#00a669",
+                        "on-primary-fixed": "#241a00",
+                        "secondary-fixed": "#78fbb6",
+                        "primary": "#f2ca50",
+                        "inverse-on-surface": "#2b303c",
+                        "surface-variant": "#303541",
+                        "on-tertiary-fixed": "#400200"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif SC", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Space Grotesk", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAIu67QyS2U8Q9y4WiiEB620y2y46pJixNp_8VTVSFsRIt1LHfLZTnxZfLi2RgtWtHZGEOevtZnOhYNe60sR8fx2bAl2FRGbr6MkuHO_w6oaZrpiD8ATK-8RYcMO8-CYYmnMWNH6W8cBiT5bCATwI2UHMLf6U8URQ5uSvpqi8UUFRWcFYmRvsSZoQ4tAsJtGHb34h1pEnf5ieSVEWTcvq3SiocfGzMOMZHT1nkbZ0WbzP4_RdSSm81K0UUnu7Zbqcq1QIyX_9kGbCY);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.bg-hex-pattern {
+    background-image: radial-gradient(circle at 2px 2px, rgba(242, 202, 80, 0.05) 1px, transparent 0);
+    background-size: 24px 24px
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen">
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e131e] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#f2ca50] active:scale-95 duration-200 cursor-pointer">menu</span>
+</div>
+<h1 class="font-['Noto_Serif'] font-bold tracking-tight text-2xl font-black text-[#f2ca50] drop-shadow-sm">金曜神占</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#f2ca50]/20 active:scale-95 duration-200">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a serene person silhouette against a dark cosmic background with golden glowing particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTT0COrSIcoRV1YL-ySYypwE1Pa0M8NYwSMzxxYvyBZr6bOautTexEi6UxNpirkCxO_v7cR8Ir85RlzIi_3P-k7f1xEqG10tx9pMe0XPo7RIpbKnVtuUfqccVfFgN5e9k6Slawnv2tHTL8uRqPMQ8oPkTrGq5V0BRvnMmH6_KdcSYE-knqZ1CQXeyEn2-kYrQ1TP1c09oq_xhP3upy2c3xvhbz-1XnJcQ9jMoxdEKuqNKw2zqRvOst4dfmq9WeAH65ZWjL_TeCgds"/>
+</div>
+<!-- style_separation_logic -->
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-b from-[#303541] to-transparent h-1"></div>
+</header>
+<main class="pt-20 pb-32 px-6 flex flex-col items-center max-w-md mx-auto min-h-screen bg-hex-pattern">
+<!-- Ritual Area -->
+<section class="w-full flex flex-col items-center py-8 text-center">
+<div class="mb-4">
+<span class="material-symbols-outlined text-primary text-4xl mb-2 opacity-50" style="font-variation-settings: 'FILL' 0;">temple_buddhist</span>
+</div>
+<h2 class="font-headline text-xl text-primary-fixed-dim tracking-wider mb-12">静心合十，诚意起卦</h2>
+<!-- Three Ancient Coins -->
+<div class="relative w-full h-48 flex justify-center items-center gap-4">
+<!-- Coin 1 -->
+<div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#f2ca50] via-[#d4af37] to-[#8d711a] flex items-center justify-center shadow-[0_8px_32px_rgba(212,175,55,0.3)] relative group">
+<div class="w-6 h-6 bg-surface border-2 border-primary-container rounded-sm transform rotate-45"></div>
+<div class="absolute inset-0 border-[3px] border-on-primary-container/20 rounded-full m-1"></div>
+<div class="absolute -top-1 -left-1 w-4 h-4 rounded-full bg-white/10 blur-sm"></div>
+</div>
+<!-- Coin 2 -->
+<div class="w-24 h-24 rounded-full bg-gradient-to-br from-[#f2ca50] via-[#d4af37] to-[#8d711a] flex items-center justify-center shadow-[0_12px_48px_rgba(212,175,55,0.4)] relative -mt-4">
+<div class="w-7 h-7 bg-surface border-2 border-primary-container rounded-sm transform rotate-12"></div>
+<div class="absolute inset-0 border-[3px] border-on-primary-container/20 rounded-full m-1.5"></div>
+<div class="absolute top-1 right-2 w-6 h-6 rounded-full bg-white/15 blur-md"></div>
+</div>
+<!-- Coin 3 -->
+<div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#f2ca50] via-[#d4af37] to-[#8d711a] flex items-center justify-center shadow-[0_8px_32px_rgba(212,175,55,0.3)] relative">
+<div class="w-6 h-6 bg-surface border-2 border-primary-container rounded-sm transform -rotate-45"></div>
+<div class="absolute inset-0 border-[3px] border-on-primary-container/20 rounded-full m-1"></div>
+</div>
+<!-- Glow Effect -->
+<div class="absolute inset-0 bg-primary/5 blur-[80px] -z-10 rounded-full"></div>
+</div>
+</section>
+<!-- Action Button -->
+<div class="w-full mt-4 mb-12">
+<button class="w-full py-5 bg-gradient-to-r from-primary-container to-primary text-on-primary-container font-headline font-bold text-lg rounded-xl shadow-[0_4px_20px_rgba(242,202,80,0.3)] active:scale-[0.98] transition-all relative overflow-hidden group">
+<span class="relative z-10 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-2xl">auto_awesome</span>
+                    立即摇卦
+                </span>
+<div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</button>
+</div>
+<!-- Formation Sequence (Hexagram) -->
+<section class="w-full space-y-4 px-2">
+<!-- Empty Lines (Upper Trigram) -->
+<div class="flex items-center gap-4 opacity-30">
+<span class="font-label text-xs w-6">06</span>
+<div class="flex-1 h-3 bg-surface-container-highest rounded-full border border-white/5"></div>
+<span class="font-label text-xs w-16 text-right">等待中</span>
+</div>
+<div class="flex items-center gap-4 opacity-30">
+<span class="font-label text-xs w-6">05</span>
+<div class="flex-1 h-3 bg-surface-container-highest rounded-full border border-white/5"></div>
+<span class="font-label text-xs w-16 text-right">等待中</span>
+</div>
+<div class="flex items-center gap-4 opacity-30">
+<span class="font-label text-xs w-6">04</span>
+<div class="flex-1 h-3 bg-surface-container-highest rounded-full border border-white/5"></div>
+<span class="font-label text-xs w-16 text-right">等待中</span>
+</div>
+<!-- Filled Lines (Lower Trigram) -->
+<!-- Line 03: Yin -->
+<div class="flex items-center gap-4">
+<span class="font-label text-xs w-6 text-primary">03</span>
+<div class="flex-1 flex gap-2">
+<div class="h-3 bg-secondary rounded-full flex-1 shadow-[0_0_10px_rgba(89,222,155,0.3)]"></div>
+<div class="h-3 bg-secondary rounded-full flex-1 shadow-[0_0_10px_rgba(89,222,155,0.3)]"></div>
+</div>
+<span class="font-label text-xs w-16 text-right text-secondary">阴 (少阴)</span>
+</div>
+<!-- Line 02: Yang -->
+<div class="flex items-center gap-4">
+<span class="font-label text-xs w-6 text-primary">02</span>
+<div class="flex-1 h-3 bg-primary rounded-full shadow-[0_0_12px_rgba(242,202,80,0.4)]"></div>
+<span class="font-label text-xs w-16 text-right text-primary">阳 (老阳)</span>
+</div>
+<!-- Line 01: Yang -->
+<div class="flex items-center gap-4">
+<span class="font-label text-xs w-6 text-primary">01</span>
+<div class="flex-1 h-3 bg-primary rounded-full shadow-[0_0_12px_rgba(242,202,80,0.4)]"></div>
+<span class="font-label text-xs w-16 text-right text-primary">阳 (少阳)</span>
+</div>
+</section>
+<!-- Current Progress Info Card -->
+<div class="w-full mt-10 p-5 bg-surface-container rounded-2xl border border-white/5 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-6xl">info</span>
+</div>
+<div class="flex items-start gap-3 relative z-10">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">waves</span>
+<div class="space-y-1">
+<h4 class="font-headline text-sm font-bold text-on-surface">内卦已成 (下三爻)</h4>
+<p class="text-on-surface-variant text-xs leading-relaxed">
+                        下卦呈现「离」火之象。请屏息凝神，继续完成上三爻的感应，以确立完整之卦像。
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#0e131e]/90 backdrop-blur-xl z-50 rounded-t-xl border-t border-[#f2ca50]/10 shadow-[0_-4px_24px_rgba(0,0,0,0.6)]">
+<!-- 乾坤 -->
+<div class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 hover:text-[#59de9b] transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest">乾坤</span>
+</div>
+<!-- 市道 -->
+<div class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 hover:text-[#59de9b] transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="trending_up">trending_up</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest">市道</span>
+</div>
+<!-- 卜卦 (Active) -->
+<div class="flex flex-col items-center justify-center text-[#f2ca50] bg-[#303541]/50 rounded-xl px-3 py-1 scale-110 transition-transform animate-pulse-slow cursor-pointer">
+<span class="material-symbols-outlined mb-0.5" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest">卜卦</span>
+</div>
+<!-- 帐籍 -->
+<div class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 hover:text-[#59de9b] transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest">帐籍</span>
+</div>
+</nav>
+</body></html>
